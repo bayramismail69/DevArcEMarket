@@ -98,6 +98,13 @@ namespace Business
         {
 
             ConfigureServices(services);
+            services.AddTransient<IProductImageRepository, ProductImageRepository>();
+            services.AddTransient<IOrderStatusRepository, OrderStatusRepository>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IBasketRepository, BasketRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
@@ -126,6 +133,13 @@ namespace Business
         public void ConfigureStagingServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IProductImageRepository, ProductImageRepository>();
+            services.AddTransient<IOrderStatusRepository, OrderStatusRepository>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IBasketRepository, BasketRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
@@ -150,6 +164,13 @@ namespace Business
         public void ConfigureProductionServices(IServiceCollection services)
         {
             ConfigureServices(services);
+            services.AddTransient<IProductImageRepository, ProductImageRepository>();
+            services.AddTransient<IOrderStatusRepository, OrderStatusRepository>();
+            services.AddTransient<IOrderDetailRepository, OrderDetailRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IBasketRepository, BasketRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
             services.AddTransient<ILogRepository, LogRepository>();
             services.AddTransient<ITranslateRepository, TranslateRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();

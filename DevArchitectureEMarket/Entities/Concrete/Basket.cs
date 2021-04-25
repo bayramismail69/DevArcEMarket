@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Core.Entities;
 
 namespace Entities.Concrete
 {
-   public class City:IEntity
+    public class Basket :IEntity
     {
         public int Id { get; set; }
-        public int CountryId { get; set; }
-        public string Name { get; set; }
+        public int UserId { get; set; }
+        public int ProductId { get; set; }
+        public int PaymentMethodId { get; set; }
+        public int Count { get; set; } 
         public DateTime CreateDate { get; set; }
         public bool Active { get; set; }
     }

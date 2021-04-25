@@ -66,6 +66,13 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public DbSet<MobileLogin> MobileLogins { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Translate> Translates { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<OrderStatus> OrderStatuses { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
 
     }
 }
