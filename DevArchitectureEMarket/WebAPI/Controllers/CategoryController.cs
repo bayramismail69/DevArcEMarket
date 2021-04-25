@@ -11,6 +11,9 @@ using Nest;
 
 namespace WebAPI.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : BaseApiController
@@ -26,9 +29,9 @@ namespace WebAPI.Controllers
             var result = await Mediator.Send(createCategory);
             if (result.Success)
             {
-                return Ok(result.Message);
+                return Ok(result);
             }
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
         /// <summary>
         /// List

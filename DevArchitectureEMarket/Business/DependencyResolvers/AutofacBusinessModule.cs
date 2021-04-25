@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using Autofac.Extras.DynamicProxy;
-using Business.Abstract;
-using Business.Concrete;
+
 using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
@@ -34,8 +33,7 @@ namespace Business.DependencyResolvers
         {
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            builder.RegisterType<ProductManager>().As<IProductService>();
-            builder.RegisterType<EfProductDal>().As<IProductDal>();
+            builder.RegisterType<ProductRepository>().As<IProductRepository>();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
 
                     .AsClosedTypesOf(typeof(IRequestHandler<,>));

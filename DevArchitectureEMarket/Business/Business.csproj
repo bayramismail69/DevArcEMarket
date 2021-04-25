@@ -33,5 +33,10 @@
   </ItemGroup>
  <ItemGroup>
    <WCFMetadata Include="Connected Services" />
+ </ItemGroup>
+ <ItemGroup>
+   <Folder Include="Handlers\Products\Commands\" />
+   <Folder Include="Handlers\Products\BusinessRules\" />
+   <Folder Include="Handlers\Products\ValidationRules\" />
  </ItemGroup> 
 </Project>

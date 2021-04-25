@@ -4,26 +4,32 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Business.Abstract;
+using Business.Handlers.Categories.Queries;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
-        private IProductService _productService;
-
-        public ProductsController(IProductService productService)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpGet("getList")]
+        public async Task<IActionResult> GetList()
         {
-            _productService = productService;
-        }
-
-        [HttpGet("getAll")]
-        public IActionResult GetAll()
-        {
-           var result= _productService.GetAll();
-           return Ok(result);
+            var result = await Mediator.Send(new GetCategoryListQuery());
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }

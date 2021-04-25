@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Handlers.Categories.Queries;
@@ -21,9 +22,9 @@ namespace Business.Handlers.Categories.BusinessRules
 
 
        public async Task<IResult> NameControl(string name)
-        {
-           var result= await _categoryRepository.GetListAsync(c=>c.Name.ToUpper(new CultureInfo("en-US", false)) == name.ToUpper(new CultureInfo("en-US", false)));
-            if (  result!=null)
+       {
+           var result= await _categoryRepository.GetAsync(c => c.Name.ToUpper() == name.ToUpper());
+            if (  result==null)
             {
                 return new SuccessResult();
             }

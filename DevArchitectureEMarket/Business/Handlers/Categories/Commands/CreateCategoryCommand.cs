@@ -43,7 +43,7 @@ namespace Business.Handlers.Categories.Commands
                 };
                 //var categoryNameControl = new CategoryBusinessRules().NameControl(category.Name);
                 var categoryNameControl = _categoryBusinessRules.NameControl(category.Name);
-                var result = Core.Utilities.Business.BusinessRules.Run();
+                var result = Core.Utilities.Business.BusinessRules.Run(categoryNameControl.Result);
                 if (result != null)
                 {
                     return result;
